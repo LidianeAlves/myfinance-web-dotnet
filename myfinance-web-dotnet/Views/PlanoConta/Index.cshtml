@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Plano de Contas";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewData["Title"]</h1>
+</div>
+
+<button type="button" class="btn btn-info" onclick="Cadastrar();">Cadastrar Plano Conta</button>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">#</th>
+            <th scope="col">#</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var item in (List<PlanoContaModel>)ViewBag.listaPlanoConta)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Descricao</td>
+                    <td>@item.Tipo</td>
+                    <td><button type="button" class="btn btn-warning">Editar</button></td>
+                    <td><button type="button" class="btn btn-danger">Excluir</button></td>
+                </tr>
+                
+            }
+        }
+    </tbody>
+</table>
+<script>
+    function Cadastrar(){
+        window.location.href = "../PlanoConta/Cadastro"
+    }
+</script>
