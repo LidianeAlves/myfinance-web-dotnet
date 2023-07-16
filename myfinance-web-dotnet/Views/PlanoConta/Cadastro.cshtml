@@ -1,28 +1,27 @@
-@{
-    ViewData["Title"] = "Cadastro";
-}
+@model PlanoContaModel
 
-<div class="text-center">
-    <h1 class="display-4">@ViewData["Title"]</h1>
-</div>
-
-
-@* @model PlanoContaModel
 @{
     ViewData["Title"] = "Plano Conta";
 }
 <div class="text-center">
-    <h1></h1>
-    <form asp-controller="PlanoConta" asp-action="Cadastro" method="post">
-        <div class="">
-<label for=""></label>
-<input type="text" class>
-        </div>
-<div class="mb-3">
-    <label>@Html.RadioButtonFor()</label>
+    <h1 class="display-4">Cadastro de Plano de Contas</h1>
 </div>
+    <form asp-controller="PlanoConta" asp-action="Cadastro" method="post">
+        <div class="form-control">
+            <div class="mb-3">
+                <label class="form-label">Id</label>
+                <input type="text" class="form-control" asp-for="Id" placeholder="Id" disabled />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Descrição</label>
+                <input type="text" class="form-control" asp-for="Descricao" placeholder="Descrição" />
+            </div>
+            <div class="mb-3">
+                <label>@Html.RadioButtonFor(x => x.Tipo, "D")Despesa</label>
+                <label>@Html.RadioButtonFor(x => x.Tipo, "R")Receita</label>
+            </div>
         <div class="mb-3">
-<button type="submit"></button>
+            <button type="submit" class="btn btn-primary btn-lg">Salvar</button>
         </div>
     </form>
-</div> *@
+</div>
